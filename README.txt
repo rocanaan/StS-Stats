@@ -3,6 +3,8 @@ For setting up SpireStats:
 1. Install Python: https://www.python.org/downloads/
   on Windows this entails downloading an exe and running it. Standard install config is fine.
 2. Tweak config.ini to your liking (only change the settings in the [USER] section)
+  - in particular, you need to set path to the file location of your 'runs' folder.
+      to do this, open up the game file location, open the runs folder, and copy and paste the path into config.ini
 3. Edit streaks.txt to contain your current active streaks
   (format is rotating/ironclad/silent/defect/watcher, each on a new line)
 4. If you would like the winrate/streaks to automatically update on your stream:

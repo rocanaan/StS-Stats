@@ -22,7 +22,7 @@ def main():
     #update loop
     while True:
         checkUpdate(charCount, path, charNames, historySize)
-        winrates = calcWinrates(historySize, charCount)
+        winrates = calcWinrates(historySize, charCount, rotB)
         outToFile('streaks.txt', streakData, charCount, winrates)
         if fileOutput:
             outToFile('winrates.txt', winrates, charCount, winrates)
