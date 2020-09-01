@@ -14,7 +14,7 @@ streakData = []
 
 def main():
     #get the config file data
-    path, fileOutput, historySize, tick, charCount, charNames = readConfig()
+    path, fileOutput, historySize, tick, rotB, charCount, charNames = readConfig()
 
     initRunData(charCount, path, charNames, historySize)
     readStreakData(charCount)
@@ -59,10 +59,14 @@ def readStreakData(charCount):
             streakData.append(int(line[i]))
 
 
-def calcWinrates(historySize, charCount):
+def calcWinrates(historySize, charCount, rotB):
     winrates = [0]
     rotating = []
-    skim = math.floor(historySize/charCount)
+    skim = 0
+    if rotB == 0:
+        skim = math.floor(historySize/charCount)
+    else:
+        skim = historySize
     for i in range(charCount):
         rotating.extend(resultData[i][-skim:])
         rate = getWinrate(resultData[i])
@@ -151,6 +155,7 @@ def readConfig():
 
     historySize = int(config['USER']['historySize'])
     tick = int(config['USER']['tick'])
+    rotB = int(config['USER']['rotatingBehavior'])
 
     global DEBUG
     DEBUG = config['OTHER']['debug'] == 'True'
@@ -158,7 +163,7 @@ def readConfig():
     names = config['OTHER']['charNames']
     charNames = names.split('|')
 
-    return path, fileOutput, historySize, tick, charCount, charNames
+    return path, fileOutput, historySize, tick, rotB, charCount, charNames
 
 
 if __name__ == "__main__":
