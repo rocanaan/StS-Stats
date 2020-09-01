@@ -13,7 +13,8 @@ For setting up SpireStats:
     - Configure other settings (such as size, font, color, etc) as needed
     - Note: in order for this feature to work, 'fileOutput' in config.ini must be set to True. This is the default
 5. If you do not intend to show this automatically on stream, set 'fileOutput' to False so that the winrates
-    can be displayed on the terminal window instead
+    can be displayed in the terminal window instead
+6. You are all setup! Just double click to run (or run through a terminal window) whenever you want stats to update.
 
 Other various notes:
 I am not aware of how things like ModTheSpire, mod characters, and daily runs interact with my script.

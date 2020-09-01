@@ -13,8 +13,12 @@ resultData = [[], [], [], []]
 streakData = []
 
 def main():
+    print('Welcome to SpireStats')
+    print('Leave this window open in the background and stats will be updated')
     #get the config file data
     path, fileOutput, historySize, tick, rotB, charCount, charNames = readConfig()
+    if fileOutput:
+        print('\tYour stats will appear in streaks.txt and winrates.txt')
 
     initRunData(charCount, path, charNames, historySize)
     readStreakData(charCount)
