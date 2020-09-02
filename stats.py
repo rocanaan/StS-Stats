@@ -17,6 +17,11 @@ def main():
     print('Leave this window open in the background and stats will be updated')
     #get the config file data
     path, fileOutput, historySize, tick, rotB, charCount, charNames = readConfig()
+
+    #replace spaces in the path with separators
+    path.replace(" ", os.sep)
+
+    path.replace(" ", os.sep)
     if fileOutput:
         print('\tYour stats will appear in streaks.txt and winrates.txt')
 
