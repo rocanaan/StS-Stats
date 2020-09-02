@@ -21,7 +21,6 @@ def main():
     #replace spaces in the path with separators
     path.replace(" ", os.sep)
 
-    path.replace(" ", os.sep)
     if fileOutput:
         print('\tYour stats will appear in streaks.txt and winrates.txt')
 
